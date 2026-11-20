@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mazin Thaher — Professional Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --espresso: #1d1511;
+    --roast: #2a1f19;
+    --crema: #c98a4b;
+    --crema-soft: #e7c9a3;
+    --paper: #fbf7f1;
+    --cream: #f3ebdf;
+    --ink: #2b241f;
+    --muted: #7d6f63;
+    --line: #e3d8c9;
+    --swat: #f26b1d;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { background: #8f857c; font-family: var(--sans); color: var(--ink); font-size: 9.4pt; line-height: 1.5; }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  .page {
+    width: 210mm; height: 297mm; margin: 10mm auto; background: var(--paper);
+    position: relative; overflow: hidden; box-shadow: 0 6px 30px rgba(0,0,0,.25);
+  }
+  @media print { body { background: none; } .page { margin: 0; box-shadow: none; page-break-after: always; } }
+  @media screen and (max-width: 820px) {
+    body { background: var(--paper); }
+    .page { zoom: calc(100vw / 210mm); margin: 0 auto 4px; box-shadow: none; }
+  }
+
+  /* ---------- shared bits ---------- */
+  .eyebrow { font: 600 6.8pt/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--crema); }
+  h2 { font: 400 17pt/1.1 var(--serif); letter-spacing: -.01em; margin: 1.5mm 0 4mm; }
+  h2 em { font-style: italic; font-weight: 300; color: var(--crema); }
+  .section { margin-bottom: 8mm; }
+  .footer {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 12mm; padding: 0 14mm;
+    display: flex; align-items: center; justify-content: space-between;
+    font: 400 6.6pt var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+  }
+  .footer b { color: var(--ink); font-weight: 600; }
+  .footer .num { font: italic 300 10pt var(--serif); letter-spacing: 0; color: var(--crema); }
+
+  /* ---------- page 1 : sidebar layout ---------- */
+  .p1 { display: grid; grid-template-columns: 66mm 1fr; }
+  .side {
+    background: var(--espresso); color: #e9dfd3; padding: 16mm 9mm 14mm 11mm; height: 297mm;
+    display: flex; flex-direction: column; gap: 8.5mm; position: relative;
+  }
+  .side::after { content: ""; position: absolute; top: 0; right: 0; width: 1.2mm; height: 100%;
+    background: linear-gradient(var(--crema), #8a5a2e); }
+  .mono {
+    width: 22mm; height: 22mm; border-radius: 50%; border: 1px solid var(--crema);
+    display: grid; place-items: center; font: italic 300 19pt var(--serif); color: var(--crema-soft);
+  }
+  .side .eyebrow { color: var(--crema); margin-bottom: 3mm; display: block; }
+  .side dl { display: grid; gap: 2.6mm; }
+  .side dt { font: 500 6.4pt var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #9c8b7c; }
+  .side dd { font-size: 8.6pt; color: #f5ede3; word-break: break-word; }
+  .side ul { list-style: none; display: grid; gap: 3mm; }
+  .side li { font-size: 8.4pt; line-height: 1.4; padding-left: 4mm; position: relative; }
+  .side li::before { content: ""; position: absolute; left: 0; top: 1.6mm; width: 1.6mm; height: 1.6mm;
+    border-radius: 50%; background: var(--crema); }
+  .side small { display: block; color: #a8978a; font-size: 7.4pt; margin-top: .6mm; }
+  .lang { display: grid; gap: 3mm; }
+  .lang .l { display: flex; justify-content: space-between; font-size: 8.6pt; }
+  .lang em { font-style: normal; font-size: 7.2pt; color: #a8978a; }
+  .bar { display: block; height: 1mm; background: #3d3029; border-radius: 1mm; margin-top: 1.2mm; overflow: hidden; }
+  .bar i { display: block; height: 100%; background: var(--crema); }
+  .side .target {
+    margin-top: auto; border-top: 1px solid #3d3029; padding-top: 5mm;
+    font: italic 300 11pt/1.35 var(--serif); color: var(--crema-soft);
+  }
+  .side .target b { display: block; font: 600 6.4pt var(--sans); font-style: normal; letter-spacing: .2em;
+    text-transform: uppercase; color: #9c8b7c; margin-bottom: 2mm; }
+
+  .main { padding: 16mm 13mm 14mm 12mm; }
+  .name { font: 300 37pt/0.95 var(--serif); letter-spacing: -.02em; color: var(--espresso); }
+  .name em { font-style: italic; color: var(--crema); }
+  .roles { margin: 4mm 0 9mm; display: flex; flex-wrap: wrap; gap: 1.6mm; }
+  .roles span { font: 500 7pt var(--sans); letter-spacing: .08em; text-transform: uppercase;
+    padding: 1.5mm 3mm; border: 1px solid var(--line); border-radius: 10mm; color: var(--roast); background: #fff; }
+  .lead { font: 300 11.2pt/1.55 var(--serif); color: var(--roast); }
+  .lead::first-letter { font-size: 1em; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); margin: 7mm 0 9mm;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .stats div { padding: 4mm 0 4mm 3.5mm; border-left: 1px solid var(--line); }
+  .stats div:first-child { border-left: 0; padding-left: 0; }
+  .stats b { display: block; font: 300 22pt/1 var(--serif); color: var(--espresso); }
+  .stats b sup { font-size: .5em; color: var(--crema); vertical-align: top; }
+  .stats span { display: block; font-size: 7pt; line-height: 1.35; color: var(--muted); margin-top: 1.8mm; }
+
+  .comp { display: grid; grid-template-columns: 1fr 1fr; column-gap: 7mm; row-gap: 3.6mm; }
+  .comp > div { display: grid; grid-template-columns: 6mm 1fr; }
+  .comp i { font: italic 300 9pt var(--serif); color: var(--crema); padding-top: .2mm; }
+  .comp h3 { font: 600 8.4pt var(--sans); color: var(--espresso); margin-bottom: .6mm; }
+  .comp p { font-size: 7.8pt; line-height: 1.42; color: var(--muted); }
+
+  .strip { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 2.5mm; height: 50mm; }
+  .strip figure { border-radius: 2.5mm; overflow: hidden; }
+
+  /* ---------- page header (pages 2-4) ---------- */
+  .head {
+    height: 24mm; padding: 0 14mm; display: flex; align-items: center; justify-content: space-between;
+    background: var(--espresso); color: var(--crema-soft); position: relative;
+  }
+  .head::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.2mm;
+    background: linear-gradient(90deg, var(--crema), #8a5a2e); }
+  .head .n { font: 300 16pt var(--serif); letter-spacing: -.01em; color: #f5ede3; }
+  .head .n em { font-style: italic; color: var(--crema); }
+  .head .t { font: 500 6.8pt var(--sans); letter-spacing: .24em; text-transform: uppercase; }
+  .body { padding: 11mm 14mm 0; }
+
+  /* ---------- page 2 : experience ---------- */
+  .glance { position: relative; height: 15mm; margin: 2mm 0 9mm; }
+  .glance .rail { position: absolute; left: 0; right: 0; top: 6mm; height: 1px; background: var(--line); }
+  .glance .seg { position: absolute; top: 4.5mm; height: 3mm; border-radius: 3mm; }
+  .glance .yr { position: absolute; top: 10mm; font: 500 6.4pt var(--sans); color: var(--muted);
+    transform: translateX(-50%); letter-spacing: .06em; }
+  .glance .lbl { position: absolute; top: 0; font: 600 6pt var(--sans); letter-spacing: .1em;
+    text-transform: uppercase; color: var(--roast); white-space: nowrap; transform: translateX(-50%); }
+
+  .job { display: grid; grid-template-columns: 34mm 1fr; padding: 4.2mm 0; border-top: 1px solid var(--line); }
+  .job:first-of-type { border-top: 0; padding-top: 0; }
+  .when { font: italic 300 10pt/1.3 var(--serif); word-spacing: .18em; color: var(--crema); }
+  .when small { display: block; font: 500 6.4pt var(--sans); font-style: normal; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--muted); margin-top: 1mm; }
+  .job h3 { font: 400 13pt/1.2 var(--serif); color: var(--espresso); }
+  .job .where { font: 500 7.6pt var(--sans); color: var(--muted); letter-spacing: .02em; margin: .8mm 0 2.2mm; }
+  .job ul { list-style: none; display: grid; gap: 1.3mm; }
+  .job li { padding-left: 4.5mm; position: relative; font-size: 8.5pt; line-height: 1.48; }
+  .job li::before { content: ""; position: absolute; left: 0; top: 2.1mm; width: 2.2mm; height: 1px; background: var(--crema); }
+
+
+  /* ---------- page 3 : wafflelab ---------- */
+  .ptitle { display: grid; grid-template-columns: 1fr 66mm; gap: 10mm; align-items: end; margin-bottom: 7mm; }
+  .ptitle h2 { font-size: 30pt; margin: 2mm 0 0; }
+  .ptitle p { font-size: 8.6pt; color: var(--muted); line-height: 1.55; }
+  .facts { display: flex; gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 6mm; }
+  .facts div { flex: 1; padding: 3mm 0 3mm 4mm; border-left: 1px solid var(--line); }
+  .facts div:first-child { border-left: 0; padding-left: 0; }
+  .facts dt { font: 500 6.2pt var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+  .facts dd { font: 400 10pt var(--serif); color: var(--espresso); margin-top: .6mm; }
+
+  .wl { display: grid; grid-template-columns: 1.15fr 1fr; grid-template-rows: 68mm 68mm auto; gap: 3mm; }
+  .wl figure { border-radius: 2.5mm; overflow: hidden; position: relative; background: #fff; }
+  .wl .tall { grid-row: span 2; }
+  .wl .row { grid-column: span 2; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; }
+  .wl .row figure { aspect-ratio: 1; }
+  .tag { position: absolute; left: 3mm; bottom: 3mm; font: 500 6.4pt var(--sans); letter-spacing: .12em;
+    text-transform: uppercase; color: #fff; background: rgba(29,21,17,.72); padding: 1.3mm 2.6mm; border-radius: 5mm; }
+
+  /* ---------- page 4 : swat (dark) ---------- */
+  .p4 { background: #141010; color: #eee3d8; }
+  .p4 .head { background: #0d0a0a; }
+  .p4 .head::after { background: linear-gradient(90deg, var(--swat), #a8400b); }
+  .p4 .head .n em { color: var(--swat); }
+  .p4 .eyebrow { color: var(--swat); }
+  .p4 .ptitle h2 { color: #fff; }
+  .p4 .ptitle h2 em { color: var(--swat); }
+  .p4 .ptitle p { color: #a99b8f; }
+  .p4 .facts { border-color: #2c2523; }
+  .p4 .facts div { border-color: #2c2523; }
+  .p4 .facts dt { color: #8a7d72; }
+  .p4 .facts dd { color: #fff; }
+  .swat { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm 3mm; }
+  .swat figure { }
+  .swat .ph { aspect-ratio: 1; border-radius: 2.5mm; overflow: hidden; }
+  .swat figcaption { font: 500 6.8pt var(--sans); letter-spacing: .06em; color: #b5a79b; margin: 1.6mm 0 1.4mm;
+    display: flex; gap: 2mm; }
+  .swat figcaption i { font: italic 300 8pt var(--serif); color: var(--swat); }
+  .p4 .footer { color: #7d7067; }
+  .p4 .footer b { color: #eee3d8; }
+  .p4 .footer .num { color: var(--swat); }
+</style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page p1">
+  <aside class="side">
+    <div class="mono">MT</div>
+
+    <div>
+      <span class="eyebrow">Contact</span>
+      <dl>
+        <div><dt>Phone</dt><dd>+962 78 746 6603</dd></div>
+        <div><dt>Email</dt><dd>mazthaher@gmail.com</dd></div>
+        <div><dt>Based in</dt><dd>Amman, Jordan</dd></div>
+      </dl>
+    </div>
+
+    <div>
+      <span class="eyebrow">Certifications</span>
+      <ul>
+        <li>HACCP Levels 1 &amp; 2</li>
+        <li>Advanced Course in Restaurant &amp; Café Management</li>
+        <li>Customer Service &amp; Team Leadership Workshop</li>
+      </ul>
+    </div>
+
+    <div>
+      <span class="eyebrow">Education</span>
+      <ul>
+        <li>High School Diploma in Restaurant &amp; Hotel Management and Food &amp; Beverage Service
+          <small>Riverchapel, Wexford, Ireland · 2016 – 2017</small></li>
+      </ul>
+    </div>
+
+    <div>
+      <span class="eyebrow">Languages</span>
+      <div class="lang">
+        <p><span class="l">Arabic <em>Native</em></span><span class="bar"><i style="width:100%"></i></span></p>
+        <p><span class="l">English <em>Fluent</em></span><span class="bar"><i style="width:85%"></i></span></p>
+      </div>
+    </div>
+
+    <div class="target">
+      <b>Seeking</b>
+      Barista &amp; Coffee Shop Manager roles in the UAE
+    </div>
+  </aside>
+
+  <main class="main">
+    <h1 class="name">Mazin<br><em>Thaher</em></h1>
+    <div class="roles">
+      <span>Barista</span><span>Coffee Shop Manager</span><span>Waffle &amp; Crepe Chef</span>
+    </div>
+
+    <span class="eyebrow">Profile</span>
+    <p class="lead" style="margin-top:3mm">
+      Barista and coffee shop manager with over 8 years in food and beverage. I built a coffee shop from scratch,
+      founded and ran two food brands from one cloud kitchen, and most recently worked the line in a busy Irish pub
+      and fine dining kitchen. I bring the craft of the bar together with the discipline of an owner.
+    </p>
+
+    <div class="stats">
+      <div><b>8<sup>+</sup></b><span>Years in food<br>&amp; beverage</span></div>
+      <div><b>2</b><span>Food brands<br>founded</span></div>
+      <div><b>1</b><span>Coffee shop built<br>from scratch</span></div>
+      <div><b>L2</b><span>HACCP Levels<br>1 &amp; 2 certified</span></div>
+    </div>
+
+    <div class="section">
+      <span class="eyebrow">Core Competencies</span>
+      <h2>What I bring <em>to the bar</em></h2>
+      <div class="comp">
+        <div><i>01</i><div><h3>Coffee &amp; Beverages</h3><p>Hot and cold drinks to a consistent, high standard</p></div></div>
+        <div><i>02</i><div><h3>Café Management</h3><p>Opened and ran a coffee shop: menu, staff, administration</p></div></div>
+        <div><i>03</i><div><h3>Menu Development</h3><p>Original recipes and signature sauces; customer-led new items</p></div></div>
+        <div><i>04</i><div><h3>Team Leadership</h3><p>Recruiting, training and guiding staff to one service standard</p></div></div>
+        <div><i>05</i><div><h3>Operations</h3><p>Procurement, mise en place, portion control, quality control</p></div></div>
+        <div><i>06</i><div><h3>Food Safety</h3><p>HACCP: storage, temperature control, allergen handling</p></div></div>
+        <div><i>07</i><div><h3>Marketing</h3><p>Campaigns that lifted sales and brought in new customers</p></div></div>
+        <div><i>08</i><div><h3>Customer Service</h3><p>Warm, fast service that builds loyal repeat guests</p></div></div>
+      </div>
+    </div>
+
+    <div class="strip">
+      <figure><img src="assets/img/kitchen-waffle.jpg" alt="Waffle with syrup"></figure>
+      <figure><img src="assets/img/kitchen-lotus.jpg" alt="Lotus waffle" style="object-position:0% 50%"></figure>
+      <figure><img src="assets/img/kitchen-pancakes.jpg" alt="Pancake stack" style="object-position:0% 50%"></figure>
+    </div>
+  </main>
+
+  <div class="footer" style="left:66mm;padding-left:12mm"><span><b>Mazin Thaher</b></span><span>References available on request</span><span class="num">01</span></div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+  <header class="head"><div class="n">Mazin <em>Thaher</em></div><div class="t">Experience</div></header>
+  <div class="body">
+    <span class="eyebrow">Career at a glance</span>
+    <div class="glance">
+      <div class="rail"></div>
+      <!-- 2017 → 2026.6 mapped to 0–100% (9.5 yrs) -->
+      <div class="seg" style="left:0%;width:10.5%;background:#e7c9a3"></div>
+      <div class="seg" style="left:10.5%;width:21%;background:#d6a774"></div>
+      <div class="seg" style="left:31.6%;width:21%;background:var(--crema)"></div>
+      <div class="seg" style="left:52.6%;width:31.6%;background:#8a5a2e"></div>
+      <div class="seg" style="left:89.5%;width:10.5%;background:var(--espresso)"></div>
+      <div class="lbl" style="left:5.2%">Chef</div>
+      <div class="lbl" style="left:21%">Barista</div>
+      <div class="lbl" style="left:42.1%">Manager</div>
+      <div class="lbl" style="left:68.4%">Founder &amp; Owner</div>
+      <div class="lbl" style="left:94.7%">Line Cook</div>
+      <div class="yr" style="left:1.5%">2017</div>
+      <div class="yr" style="left:10.5%">2018</div>
+      <div class="yr" style="left:31.6%">2020</div>
+      <div class="yr" style="left:52.6%">2022</div>
+      <div class="yr" style="left:84.2%">2025</div>
+      <div class="yr" style="left:98%">2026</div>
+    </div>
+
+    <span class="eyebrow">Experience</span>
+    <h2>Eight years <em>behind the counter</em></h2>
+
+    <article class="job">
+      <div class="when">Jul 2025 –<br>Jul 2026<small>Ireland</small></div>
+      <div>
+        <h3>Line Cook / Kitchen Chef</h3>
+        <div class="where">Busy Pub &amp; Fine Dining Kitchen</div>
+        <ul>
+          <li>Worked grill, fryer and pasta stations, adapting quickly between sections as service demanded.</li>
+          <li>Cooked fish and chips, burgers and steaks to order and to temperature, managing multiple orders at peak.</li>
+          <li>Ran mise en place each shift with portion control and consistent plating; followed HACCP and allergen protocols.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">2022 – 2025<small>Cloud Kitchen</small></div>
+      <div>
+        <h3>Founder &amp; Owner</h3>
+        <div class="where">Waffle House &amp; SWAT Burgers</div>
+        <ul>
+          <li>Founded and managed two brands at once: waffles, crepes, coffee and breakfast; and grilled, smashed and crispy chicken burgers.</li>
+          <li>Developed signature recipes and sauces that set each brand apart.</li>
+          <li>Handled procurement, food preparation and quality control; recruited, trained and guided the team.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">2020 – 2022<small>Est. 2020</small></div>
+      <div>
+        <h3>Coffee Shop Manager</h3>
+        <div class="where">Wafflelab</div>
+        <ul>
+          <li>Established the coffee shop from scratch: menu design, staff recruitment and training.</li>
+          <li>Oversaw all operational and administrative aspects; introduced marketing that significantly boosted sales.</li>
+          <li>Kept product quality and service standards consistent to maintain customer satisfaction.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">2018 – 2020</div>
+      <div>
+        <h3>Barista &amp; Chef</h3>
+        <div class="where">Coffee Shop</div>
+        <ul>
+          <li>Prepared a wide range of hot and cold beverages with meticulous attention to quality.</li>
+          <li>Built loyal customer relationships and contributed new recipes based on guest feedback.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">2017 – 2018</div>
+      <div>
+        <h3>Waffle &amp; Crepe Chef</h3>
+        <div class="where">Waffle &amp; Crepe Kitchen</div>
+        <ul>
+          <li>Prepared waffles and crepes with innovative methods, holding quality and speed in a fast-paced kitchen.</li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+  <div class="footer"><span><b>Mazin Thaher</b> · Professional Profile</span><span>References available on request</span><span class="num">02</span></div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+  <header class="head"><div class="n">Mazin <em>Thaher</em></div><div class="t">Portfolio · I</div></header>
+  <div class="body">
+    <div class="ptitle">
+      <div><span class="eyebrow">Café · Established 2020</span><h2>Wafflelab</h2></div>
+      <p>Established and managed from scratch: concept, menu design, hiring, training, daily operations and marketing.
+        A selection of the waffle, crepe and coffee menu.</p>
+    </div>
+    <dl class="facts">
+      <div><dt>Role</dt><dd>Coffee Shop Manager</dd></div>
+      <div><dt>Years</dt><dd>2020 – 2022</dd></div>
+      <div><dt>Menu</dt><dd>Waffles · Crepes · Coffee</dd></div>
+    </dl>
+    <div class="wl">
+      <figure class="tall"><img src="assets/img/wl-smile.jpg" alt="A smile in every bite campaign" style="object-position:50% 60%"></figure>
+      <figure><img src="assets/img/wl-oreo.jpg" alt="Oreo cheese waffle"><span class="tag">Oreo cheese waffle</span></figure>
+      <figure><img src="assets/img/wl-latte.jpg" alt="Spanish latte promotion" style="object-position:50% 35%"><span class="tag">Spanish latte</span></figure>
+      <div class="row">
+        <figure><img src="assets/img/wl-fruit.jpg" alt="Fruit waffle"><span class="tag">Fruit waffle</span></figure>
+        <figure><img src="assets/img/wl-crepes.jpg" alt="Caramel crepes"><span class="tag">Crepes</span></figure>
+        <figure><img src="assets/img/wl-sticks.jpg" alt="Waffle sticks"><span class="tag">Waffle sticks</span></figure>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span><b>Mazin Thaher</b> · Professional Profile</span><span>References available on request</span><span class="num">03</span></div>
+</section>
+
+<!-- ================= PAGE 4 ================= -->
+<section class="page p4">
+  <header class="head"><div class="n">Mazin <em>Thaher</em></div><div class="t">Portfolio · II</div></header>
+  <div class="body">
+    <div class="ptitle">
+      <div><span class="eyebrow">Cloud Kitchen Brand · 2022 – 2025</span><h2>SWAT <em>Burgers</em></h2></div>
+      <p>Founded and run alongside Waffle House: grilled, smashed and crispy chicken burgers and sandwiches with
+        unique breading and signature sauces.</p>
+    </div>
+    <dl class="facts">
+      <div><dt>Role</dt><dd>Founder &amp; Owner</dd></div>
+      <div><dt>Model</dt><dd>Cloud kitchen, delivery</dd></div>
+      <div><dt>Menu</dt><dd>Burgers · Sandwiches</dd></div>
+    </dl>
+    <div class="swat">
+      <figure><div class="ph"><img src="assets/img/swat-hummer.jpg" alt=""></div><figcaption><i>01</i>Hummer &amp; Big Hummer</figcaption></figure>
+      <figure><div class="ph"><img src="assets/img/swat-general.jpg" alt=""></div><figcaption><i>02</i>General · Cordon bleu</figcaption></figure>
+      <figure><div class="ph"><img src="assets/img/swat-vector.jpg" alt=""></div><figcaption><i>03</i>Vector · Chicken sandwich</figcaption></figure>
+      <figure><div class="ph"><img src="assets/img/swat-steak-box.jpg" alt=""></div><figcaption><i>04</i>Steak &amp; cheese box</figcaption></figure>
+      <figure><div class="ph"><img src="assets/img/swat-steak-sandwich.jpg" alt=""></div><figcaption><i>05</i>Steak &amp; cheese sandwich</figcaption></figure>
+      <figure><div class="ph"><img src="assets/img/swat-cordon.jpg" alt=""></div><figcaption><i>06</i>Cordon bleu, cut open</figcaption></figure>
+      <figure><div class="ph"><img src="assets/img/swat-submarine.jpg" alt=""></div><figcaption><i>07</i>Submarine shrimp meal</figcaption></figure>
+      <figure><div class="ph"><img src="assets/img/swat-friday.jpg" alt=""></div><figcaption><i>08</i>SWAT Friday promotion</figcaption></figure>
+      <figure><div class="ph"><img src="assets/img/swat-takeaway.jpg" alt=""></div><figcaption><i>09</i>Takeaway, street-style shoot</figcaption></figure>
+    </div>
+  </div>
+  <div class="footer"><span><b>Mazin Thaher</b> · Professional Profile</span><span>References available on request</span><span class="num">04</span></div>
+</section>
+
+</body>
+</html>
