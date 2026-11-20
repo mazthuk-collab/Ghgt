@@ -61,6 +61,8 @@ The structure gets attention. Human connection is what turns a viewer into a fol
 | **Shared feeling** | Say the feeling the viewer already has ("you know that moment when…") | Promise |
 | **Warm CTA** | Invite, don't command: "come say hi", "tell me yours in the comments" | CTA |
 
+For Dafsheh, the human is the **shop owner**: someone who opened at 8am, stood behind the counter all day, watched the street go by, and knows their place deserves more customers but has no time or skill to post. Every script should make that person feel seen before it sells anything.
+
 Rules:
 - At least one line in each script only a real person could say: specific, personal, slightly imperfect.
 - Open loops come from a real story ("what she said next is why we changed the whole menu"), not clickbait.
@@ -69,23 +71,39 @@ Rules:
 
 ---
 
-## 4. Dafsheh brand block (fill in once, reuse in every prompt)
+## 4. Dafsheh brand block
 
 ```
-BRAND: Dafsheh
-WHAT WE ARE: [e.g. coffee shop / café / food brand / product]
-LOCATION: [city, country]
-WHO WE SERVE: [ideal customer: age, lifestyle, why they come]
-WHAT MAKES US DIFFERENT: [1–3 things only Dafsheh does]
-THE STORY BEHIND THE NAME: [what "Dafsheh" means and why you chose it]
-FOUNDER / FACES ON CAMERA: [who speaks in the videos]
-BRAND VOICE: [e.g. warm, playful, proud, local, family-like]
-LANGUAGE: [Arabic / English / mix; dialect, e.g. Jordanian/Gulf]
-SIGNATURE PRODUCTS: [3–5 hero items]
-WORDS WE USE: [phrases, slang, greetings]
-WORDS WE NEVER USE: [anything off-brand]
-MAIN OFFER / NEXT STEP: [visit, order, DM, delivery app, link]
-CTA KEYWORD: [e.g. DAFSHEH]
+BRAND: دفشة (Dafsheh), "a push"
+TAGLINE: محلك بده دفشة؟ (Does your shop need a push?)
+WHAT WE ARE: A monthly social media content service for local shops. We make ready-to-post
+  posts and motion-graphic reels with the shop's own name and branding, every month.
+LOCATION: Jordan (Amman)
+WHO WE SERVE: Small local business owners: cafés, restaurants, bakeries, salons, boutiques,
+  barbers, pharmacies, small stores. They're busy, they know they should be posting, but they
+  have no time, no designer and no ideas.
+THE PROBLEM WE SOLVE: Accounts that are empty, outdated or posting random low-quality photos;
+  owners who feel invisible online while the shop next door looks busy.
+WHAT MAKES US DIFFERENT:
+  1. Done-for-you: content arrives ready to post, the owner just hits publish.
+  2. Made with the shop's name and identity, not generic templates.
+  3. Motion-graphic reels, not just static posts.
+  4. Simple monthly packages, start on WhatsApp in one message.
+THE STORY BEHIND THE NAME: "دفشة" is the push you give a car that won't start, or a friend who
+  needs encouragement. Every shop has the engine. It just needs a push.
+VISUAL IDENTITY: Orange #FF4D12 + near-black #111318, white text. Rounded up-right arrow icon
+  (growth, moving forward). Bold, clean Arabic type. Arrow pattern backgrounds.
+BRAND VOICE: Friendly, direct, confident, local. Talks like a friend who has your back,
+  not an agency. Short sentences, a bit of humour, zero corporate jargon.
+LANGUAGE: Jordanian Arabic (Ammani dialect). English only for loanwords people already use:
+  بوستات، ريلز، موشن جرافيك، فولورز، ستوري.
+WORDS WE USE: محلك، دفشة، بنبلّش، ابعتلنا، باقة، جاهزة للنشر، كل شهر، ولا يهمك، يلا
+WORDS WE NEVER USE: Formal Arabic (فصحى) or agency speak ("حلول تسويقية متكاملة",
+  "استراتيجيات رقمية"), fake promises ("ملايين المتابعين", "مبيعات مضمونة"), shaming the owner.
+SIGNATURE PRODUCTS: Monthly packages of branded posts + motion-graphic reels.
+MAIN OFFER / NEXT STEP: Message us on WhatsApp 0787466603 with your shop name and the
+  package that suits you, and we start. ("ابعتلنا اسم محلك والباقة اللي بتناسبك، وبنبلّش")
+CTA KEYWORD: دفشة
 ```
 
 ---
@@ -93,40 +111,55 @@ CTA KEYWORD: [e.g. DAFSHEH]
 ## 5. Master prompt (copy-paste into any AI)
 
 ```
-You are a short-form video scriptwriter for the brand Dafsheh (TikTok, Instagram Reels,
-YouTube Shorts). Your scripts must feel human, warm and real, as if spoken by someone
-from Dafsheh to one person they care about, never like an ad.
+You are the short-form video scriptwriter for دفشة (Dafsheh), a Jordanian service that makes
+ready-to-post posts and motion-graphic reels for local shops every month. You write Reels /
+TikToks that Dafsheh posts on its own accounts to win shop owners as clients.
+
+Your scripts must feel human, warm and real, like a friend from Amman talking to one shop
+owner, never like an agency ad. The shop owner must feel seen before anything is sold.
 
 BRAND CONTEXT:
 [PASTE THE DAFSHEH BRAND BLOCK HERE]
 
-Write a script using this exact 8-part structure, in order:
+Write the script in Jordanian Arabic (Ammani dialect), using this exact 8-part structure:
 
-1. HOOK (0–3s): One line to stop the scroll. Start from a real moment, person, feeling or
-   surprising truth from Dafsheh's world. No "hey guys", no logo intro.
-2. PROMISE (3–10s): Tell the viewer what they'll get by staying. Name a feeling they already
-   have ("you know that moment when…"). Can tease something for later.
-3. VALUE 1: The first genuinely useful or delightful thing (a tip, a behind-the-scenes detail,
-   a story beat). Include one sensory detail (smell, sound, taste, texture).
-4. OPEN LOOP 1: A curiosity line that comes from a real story, e.g. "and that's still not the
-   worst part…", "what she said next is why we changed everything…".
-5. VALUE 2: Stronger than Value 1. Include one honest admission (a mistake, a doubt, a
-   struggle) or a named person (customer, staff, family).
+1. HOOK (0–3s): One line that stops a shop owner mid-scroll. Start from a real moment in their
+   day or a truth they feel but don't say (e.g. the empty Instagram, the shop next door that's
+   always full, "I'll post tomorrow"). Can use the tagline "محلك بده دفشة؟". No "مرحبا جميعاً".
+2. PROMISE (3–10s): Tell them what they'll get by staying. Name the feeling they already have
+   ("بتعرف هداك الإحساس لما…").
+3. VALUE 1: The first genuinely useful thing, a quick tip any shop can use today, or a
+   before/after insight. Include one concrete, sensory detail from shop life (the smell of
+   the first coffee, the shutter going up, the quiet hour after lunch).
+4. OPEN LOOP 1: A curiosity line from a real situation, e.g. "وهاد مش أسوأ إشي…",
+   "بس اللي صار بعدها هو السبب إنه رجع يفتح الصفحة…".
+5. VALUE 2: Stronger than Value 1. Include one honest admission (a common owner mistake, said
+   with empathy, never shame) or a named real client/shop [placeholder if no real detail].
 6. OPEN LOOP 2: A different curiosity line (don't reuse Loop 1's wording).
-7. VALUE 3: The strongest payoff. Close the loops and land the emotional point: why Dafsheh
-   exists and why it matters to the viewer.
-8. CTA: Warm invitation, not a command. Speak to the viewers who stayed to the end and give
-   one clear next step: [comment "KEYWORD" / visit us / order / DM]. Also ask them a question
-   that starts a conversation (their memory, opinion or story).
+7. VALUE 3: The strongest payoff. Close the loops and land the emotional point: your shop
+   already has the engine, it just needs a push. Show how Dafsheh does it for them
+   (ready-to-post content with their shop name, every month).
+8. CTA: A warm invitation, not a command. Speak to the owners who stayed to the end:
+   "ابعتلنا اسم محلك والباقة اللي بتناسبك على الواتساب 0787466603، وبنبلّش", or
+   "اكتبلنا 'دفشة' بالكومنتات". Also ask one question that starts a conversation
+   (e.g. "شو اسم محلك؟", "شو أكتر إشي بيوقفك عن النشر؟").
 
 Rules:
 - Alternate value and curiosity. Never two value sections in a row without a loop.
-- Use "you", not "everyone". Short, spoken sentences written to be said to camera.
-- Keep the Dafsheh voice, language and dialect from the brand block.
-- Include at least one line only a real person could say: specific, personal, imperfect.
-- Never invent fake customers, reviews, numbers or events. Use [placeholders] where real
-  details are needed.
+- Talk to ONE owner ("إنت"، "محلك"), not "everyone".
+- Short spoken lines, written to be said to camera, in natural Ammani dialect.
+- At least one line only a real person could say: specific, personal, slightly imperfect.
+- Never invent clients, results, follower counts or reviews. Use [placeholders] where a
+  real story or number is needed.
+- No formal Arabic, no agency jargon, no guaranteed results, no shaming the owner.
 - Target length: [30 / 45 / 60] seconds (~2.5 words per second).
+
+Visual direction (Dafsheh look):
+- Orange #FF4D12 and near-black #111318 with white text; bold Arabic captions.
+- The rounded up-right arrow as a recurring motion element (it "pushes" each section in).
+- Show real shops: shutters, counters, hands, owners' faces, phones scrolling, before/after
+  of a shop's feed.
+- End card: "محلك بده دفشة؟" + arrow icon + WhatsApp 0787466603.
 
 Output:
 HOOK (0–3s): ...
@@ -137,19 +170,49 @@ VALUE 2: ...
 OPEN LOOP 2: ...
 VALUE 3: ...
 CTA: ...
-On-screen text for each section: ...
-B-roll / shot ideas (hands, pouring, faces, customers, the space): ...
-Human-connection check: list the sensory detail, the honest admission, the named person and
-the conversation question you used.
+On-screen text for each section (short, Arabic): ...
+B-roll / shot ideas + where the orange arrow animates: ...
+Human-connection check: the sensory detail, the honest admission, the named person/placeholder,
+and the conversation question you used.
 Alt hooks: 1) ... 2) ... 3) ...
 
 Topic for this video: [TOPIC]
 ```
 
+### Topic ideas for Dafsheh
+
+- Why your shop's Instagram looks dead even though the shop is busy
+- "I'll post tomorrow": the cost of the post that never happens
+- 3 posts every shop should have this month
+- Before/after: a shop feed with and without a push [real client, with permission]
+- Why the shop next door looks busier online (and it's not the product)
+- What a motion-graphic reel does that a phone photo can't
+- The day in a shop owner's life: when are they supposed to make content?
+- The story behind the name "دفشة"
+
 ### Quick variants
 
-- **Customer story:** "Use the same structure, but tell the story of one real Dafsheh customer: [DETAILS]. Values 1–3 are three beats of their story."
-- **Founder story:** "Make Values 1–3 three beats of how Dafsheh started: [DETAILS]. Open loops tease the hardest moment."
-- **Behind the scenes:** "Show a day or a process at Dafsheh: [PROCESS]. Every value section has a sensory detail and a shot idea."
-- **Batch:** "Generate 10 hook + promise pairs for Dafsheh on [TOPIC], each starting from a human moment, then fully script the best 3."
-- **Rewrite:** "Here is my script: [PASTE]. Restructure it into the 8-part structure, add the human-connection elements, and make it sound like Dafsheh."
+- **Client story:** "Same structure, but tell the story of one real Dafsheh client: [SHOP, DETAILS]. Values 1–3 are before, the push, and after."
+- **Founder story:** "Values 1–3 are three beats of why Dafsheh started: [DETAILS]. Open loops tease the moment the idea clicked."
+- **Package explainer:** "Explain the Dafsheh packages [PACKAGE DETAILS] using the structure, without sounding like a price list."
+- **Batch:** "Generate 10 hook + promise pairs for Dafsheh on [TOPIC], each starting from a shop owner's real moment, then fully script the best 3."
+- **For a client:** "Write a script for Dafsheh client [SHOP NAME, TYPE, AREA] to post on their own account, using the same structure and human-connection rules, in their voice, not Dafsheh's."
+
+---
+
+## 6. Example script (45s)
+
+**Topic:** "I'll post tomorrow"
+
+| Part | Script (Jordanian Arabic) | On-screen / shot |
+|---|---|---|
+| **Hook** | "كل يوم بتحكي: بكرا بنزّل بوست. صار إلك شهرين بتحكيها." | Owner's hand pulling the shutter up at 8am. Text: «بكرا بنزّل بوست 🙃» |
+| **Promise** | "إذا عندك محل وما عندك وقت للسوشال ميديا، ضلّك معي، لأنه في حل أسهل من اللي بتفكر فيه." | Owner behind the counter, phone face-down. Orange arrow slides in. |
+| **Value 1** | "أول إشي: الناس ما بتدوّر على محلك، بتدوّر على صفحتك. لما آخر بوست إلك من ٢٠٢٤، بحسّوا إنك مسكّر." | Scrolling an old, empty feed. Text: «آخر بوست: ٢٠٢٤» |
+| **Open loop 1** | "وهاد مش أسوأ إشي…" | Quick zoom, arrow pulses. |
+| **Value 2** | "أسوأ إشي إنه المحل اللي جنبك، نفس البضاعة ونفس السعر، بس الناس بتروحله لأنه صفحته حيّة. وبصراحة؟ مش ذنبك. إنت بتفتح من الصبح لليل، إيمتا بدك تصمّم؟" | Split screen: empty feed vs. lively feed. |
+| **Open loop 2** | "بس في إشي واحد بيغيّر هالمعادلة كلها…" | Arrow pushes into the next frame. |
+| **Value 3** | "إنه حدا يعملّك الشغل. كل شهر بتوصلك بوستات وريلز موشن جرافيك باسم محلك، جاهزة. إنت بس بتكبس نشر. محلك فيه كل إشي، بس بده دفشة." | Branded posts with a shop name animating in, orange/black. |
+| **CTA** | "ابعتلنا اسم محلك والباقة اللي بتناسبك على الواتساب، وبنبلّش. وقلّي بالكومنتات: شو اسم محلك؟" | End card: «محلك بده دفشة؟» + arrow + 0787466603 |
+
+Human-connection check: the 8am shutter (sensory) · "مش ذنبك" (empathy, no shame) · the shop next door (shared feeling) · "شو اسم محلك؟" (starts a conversation).
