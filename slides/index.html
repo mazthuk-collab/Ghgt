@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mazin Thaher — Slideshow</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --roast: #120c09; --bean: #1f1510; --bean-2: #2b1d16; --line: #3a2a21;
+  --crema: #e9b47c; --caramel: #c77a35; --foam: #f6ece0; --dust: #a8968a;
+  --swat: #ff6a1a; --swat-ink: #170a04;
+  --display: "Bricolage Grotesque", "Arial Narrow", sans-serif;
+  --serif: "Instrument Serif", Georgia, serif;
+  --sans: "Inter", system-ui, sans-serif;
+}
+@page { size: 1920px 1080px; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { background: #000; font: 400 22px/1.5 var(--sans); color: var(--foam); }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.slide { width: 1920px; height: 1080px; position: relative; overflow: hidden; background: var(--roast); page-break-after: always; isolation: isolate; }
+.inner { position: absolute; inset: 150px 120px 110px; }
+
+/* caramel bar + drips on every slide */
+.bar { position: absolute; inset: 0 0 auto; height: 70px; background: var(--caramel); display: flex; align-items: center; justify-content: space-between; padding: 0 120px; z-index: 3; }
+.bar .logo { font: italic 400 34px/1 var(--serif); color: var(--roast); }
+.bar .sec { font: 600 15px/1 var(--sans); letter-spacing: .26em; text-transform: uppercase; color: color-mix(in srgb, var(--roast) 75%, transparent); }
+.drips { position: absolute; top: 69px; left: 0; width: 100%; height: 130px; z-index: 2; }
+.drips path { fill: var(--caramel); }
+.foot { position: absolute; left: 120px; right: 120px; bottom: 40px; display: flex; justify-content: space-between; font: 500 14px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--dust); }
+.foot b { font: italic 400 26px/0.6 var(--serif); letter-spacing: 0; color: var(--crema); }
+
+.eyebrow { font: 600 16px/1 var(--sans); letter-spacing: .26em; text-transform: uppercase; color: var(--crema); display: inline-flex; align-items: center; gap: 14px; }
+.eyebrow::before { content: ""; width: 36px; height: 1.5px; background: currentColor; }
+h2 { font: 700 96px/.92 var(--display); font-variation-settings: "wdth" 78; letter-spacing: -.02em; margin-top: 22px; }
+h2 em { font: italic 400 1.04em/1 var(--serif); color: var(--crema); letter-spacing: 0; }
+
+/* 1 — cover */
+#swirl { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; }
+.cover::after { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse at 72% 45%, transparent 0, var(--roast) 72%); }
+.cover .inner { display: grid; grid-template-columns: 1.25fr 1fr; align-items: center; top: 190px; }
+.kicker { font: 500 22px/1.4 var(--sans); color: var(--dust); display: flex; gap: 14px; align-items: center; }
+.kicker i { width: 12px; height: 12px; border-radius: 50%; background: #6fd08c; box-shadow: 0 0 0 8px rgba(111,208,140,.15); }
+.name { margin-top: 30px; font: 800 250px/.8 var(--display); font-variation-settings: "wdth" 75; letter-spacing: -.035em; text-transform: uppercase; }
+.name span { display: block; }
+.name span + span { color: var(--crema); }
+.roles { margin-top: 40px; font: italic 400 44px/1.2 var(--serif); max-width: 24ch; }
+.roles b { font-weight: 400; color: var(--crema); }
+.cupbox { position: relative; width: 640px; height: 640px; justify-self: center; }
+.badge { position: absolute; inset: 0; }
+.badge text { font: 600 14px var(--sans); letter-spacing: .32em; fill: var(--crema); text-transform: uppercase; }
+.cup { position: absolute; inset: 18%; border-radius: 50%; overflow: hidden; box-shadow: 0 50px 100px -30px #000, 0 0 0 14px var(--bean-2), 0 0 0 16px #4a372c; }
+.cup img { transform: scale(1.15); object-position: 50% 72%; }
+
+/* 2 — profile */
+.prof .inner { display: grid; grid-template-rows: auto 1fr; }
+.prof-top { display: grid; grid-template-columns: 1fr 1.05fr; gap: 90px; align-items: end; }
+.lead { font: 400 36px/1.4 var(--serif); color: #e7dbcf; }
+.lead em { color: var(--crema); }
+.stats { align-self: end; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+.stat { padding: 40px 30px 0 0; }
+.stat + .stat { padding-left: 36px; border-left: 1px solid var(--line); }
+.stat b { display: block; font: 800 150px/.85 var(--display); font-variation-settings: "wdth" 75; }
+.stat b sup { font-size: .42em; color: var(--crema); vertical-align: top; }
+.stat .lab { display: block; margin-top: 18px; color: var(--dust); font-size: 22px; }
+
+/* 3 — skills */
+.grid4 { margin-top: 60px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.skill { position: relative; padding: 34px 30px 32px; border-radius: 26px; background: var(--bean); height: 270px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+.skill.hot { background: radial-gradient(300px circle at 80% 0%, color-mix(in srgb, var(--crema) 30%, transparent), transparent 70%), var(--bean); }
+.skill svg { position: absolute; top: 30px; left: 30px; width: 46px; height: 46px; stroke: var(--crema); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.skill h3 { font: 700 30px/1.1 var(--display); font-variation-settings: "wdth" 85; margin-bottom: 10px; }
+.skill p { color: var(--dust); font-size: 20px; line-height: 1.45; }
+
+/* 4/5 — experience */
+.exp .inner { display: grid; grid-template-columns: 560px 1fr; gap: 80px; }
+.exp .side p { margin-top: 36px; color: var(--dust); font-size: 22px; max-width: 26ch; }
+.tl { position: relative; padding-left: 70px; display: grid; gap: 54px; align-content: center; }
+.tl::before { content: ""; position: absolute; left: 22px; top: 10px; bottom: 10px; width: 4px; border-radius: 4px; background: linear-gradient(var(--crema), var(--caramel)); box-shadow: 0 0 24px var(--caramel); }
+.job { position: relative; }
+.job::before { content: ""; position: absolute; left: -59px; top: 6px; width: 22px; height: 22px; border-radius: 50%; background: var(--crema); border: 4px solid var(--roast); box-shadow: 0 0 0 3px var(--crema); }
+.when { font: italic 400 30px/1 var(--serif); color: var(--crema); }
+.when small { font: 600 14px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--dust); font-style: normal; margin-left: 16px; }
+.job h3 { margin-top: 10px; font: 700 48px/1 var(--display); font-variation-settings: "wdth" 80; }
+.job .where { margin: 8px 0 14px; color: var(--crema); font-size: 21px; }
+.job ul { list-style: none; display: grid; gap: 8px; color: #d4c6b9; font-size: 21px; line-height: 1.45; max-width: 66ch; }
+.job li { padding-left: 28px; position: relative; }
+.job li::before { content: ""; position: absolute; left: 0; top: .72em; width: 16px; height: 1.5px; background: var(--caramel); }
+
+/* 6 — wafflelab */
+.wl .inner { display: grid; grid-template-columns: 560px minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); gap: 70px; }
+.wl .side p { margin-top: 36px; color: var(--dust); font-size: 23px; }
+.facts { margin-top: 44px; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.facts div { padding: 18px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: baseline; }
+.facts dt { font: 600 14px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--dust); }
+.facts dd { font: 600 26px/1 var(--display); font-variation-settings: "wdth" 88; }
+.bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); min-height: 0; grid-template-rows: repeat(3, minmax(0, 1fr)); gap: 16px; height: 100%; }
+.tile { position: relative; border-radius: 24px; overflow: hidden; background: #fff; }
+.tile.big { grid-column: span 2; grid-row: span 2; }
+.tile.tall { grid-row: span 2; }
+.cap { position: absolute; left: 16px; bottom: 16px; padding: 9px 16px; border-radius: 99px; background: rgba(18,12,9,.78); font: 600 13px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--foam); }
+
+/* 7 — swat */
+.swat { background: var(--swat); color: var(--swat-ink); }
+.swat .bar { background: var(--swat-ink); }
+.swat .bar .logo { color: var(--swat); }
+.swat .bar .sec { color: #d9b9a6; }
+.swat .drips path { fill: var(--swat-ink); }
+.swat .eyebrow { color: var(--swat-ink); }
+.swat h2 em { color: #fff; }
+.swat .inner { display: grid; grid-template-columns: 600px 1fr; gap: 70px; }
+.swat .side p { margin-top: 36px; font-size: 23px; font-weight: 500; }
+.ticker { margin-top: 50px; font: 800 74px/.95 var(--display); font-variation-settings: "wdth" 75; text-transform: uppercase; letter-spacing: -.02em; }
+.ticker span { color: #fff; display: block; }
+.swat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-content: center; justify-self: end; width: 790px; }
+.card { position: relative; aspect-ratio: 1; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 40px -24px rgba(0,0,0,.7); }
+.card .cap { left: 12px; bottom: 12px; padding: 7px 12px; font-size: 11px; background: rgba(23,10,4,.82); color: #fff; }
+.swat .foot { color: var(--swat-ink); }
+.swat .foot b { color: #fff; }
+
+/* 8 — credentials */
+.cred-grid { margin-top: 64px; display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 22px; }
+.panel { background: var(--bean); border-radius: 28px; padding: 40px; min-height: 420px; }
+.panel h3 { font: 600 15px/1 var(--sans); letter-spacing: .24em; text-transform: uppercase; color: var(--crema); margin-bottom: 30px; }
+.panel ul { list-style: none; display: grid; gap: 24px; }
+.panel li { font: 600 30px/1.2 var(--display); font-variation-settings: "wdth" 88; }
+.panel li small { display: block; margin-top: 8px; font: 400 19px/1.4 var(--sans); color: var(--dust); }
+.meter { height: 8px; background: var(--bean-2); border-radius: 8px; margin-top: 14px; }
+.meter i { display: block; height: 100%; width: 100%; border-radius: 8px; background: linear-gradient(90deg, var(--caramel), var(--crema)); }
+
+/* 9 — contact */
+.contact .big { margin-top: 30px; font: 800 210px/.84 var(--display); font-variation-settings: "wdth" 75; text-transform: uppercase; letter-spacing: -.035em; }
+.contact .big em { font: italic 400 1em/1 var(--serif); text-transform: none; color: var(--crema); letter-spacing: -.01em; }
+.chips { position: absolute; left: 0; right: 0; bottom: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.chip { background: var(--bean); border-radius: 26px; padding: 30px 32px; }
+.chip span { display: block; font: 600 14px/1 var(--sans); letter-spacing: .24em; text-transform: uppercase; color: var(--dust); margin-bottom: 14px; }
+.chip strong { font: 600 34px/1.2 var(--display); font-variation-settings: "wdth" 90; }
+.chip small { display: block; margin-top: 8px; color: var(--crema); font-size: 19px; }
+</style>
+</head>
+<body>
+
+<template id="chrome">
+  <div class="bar"><span class="logo">Mazin.</span><span class="sec"></span></div>
+  <svg class="drips" viewBox="0 0 1920 130" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 0H1920V10C1860 10 1840 18 1800 18S1740 10 1680 10 1560 14 1500 12 1360 8 1300 10 1180 18 1120 14 1000 6 920 10 800 16 720 12 600 6 520 10 400 16 340 12 200 6 120 10 40 14 0 10Z"/>
+    <path d="M240 6c0 34 7 62 16 62s16-28 16-62Z"/><path d="M700 6c0 52 8 92 19 92s19-40 19-92Z"/>
+    <path d="M1150 6c0 24 5 44 12 44s12-20 12-44Z"/><path d="M1580 6c0 60 9 104 21 104s21-44 21-104Z"/>
+    <path d="M1790 6c0 28 6 50 13 50s13-22 13-50Z"/>
+  </svg>
+  <div class="foot"><span>Mazin Thaher · Barista &amp; Coffee Shop Manager</span><b></b></div>
+</template>
+
+<!-- 1 cover -->
+<section class="slide cover" data-sec="Portfolio">
+  <canvas id="swirl"></canvas>
+  <div class="inner">
+    <div>
+      <div class="kicker"><i></i>Open to Barista &amp; Coffee Shop Manager roles in the UAE</div>
+      <h1 class="name"><span>Mazin</span><span>Thaher</span></h1>
+      <p class="roles"><b>Barista</b>, <b>coffee shop manager</b> and <b>waffle &amp; crepe chef</b> with 8+ years behind the counter.</p>
+    </div>
+    <div class="cupbox">
+      <svg class="badge" viewBox="0 0 400 400"><defs><path id="circ" d="M200 200m-178 0a178 178 0 1 1 356 0a178 178 0 1 1-356 0"/></defs>
+        <text><textPath href="#circ">Barista · Coffee shop manager · Waffle &amp; crepe chef · HACCP certified ·</textPath></text></svg>
+      <div class="cup"><img src="../site/img/wl-latte.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 profile -->
+<section class="slide prof" data-sec="Profile">
+  <div class="inner">
+    <div class="prof-top">
+      <div><span class="eyebrow">Profile</span><h2>The craft of the bar, <em>the discipline of an owner.</em></h2></div>
+      <p class="lead">I built a coffee shop from scratch, founded and ran <em>two food brands</em> from one cloud kitchen, and most recently worked the line in a busy Irish pub and fine dining kitchen. Consistent quality, fast service under pressure, menu development, procurement, hygiene and team training.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>8<sup>+</sup></b><span class="lab">Years in food &amp; beverage</span></div>
+      <div class="stat"><b>2</b><span class="lab">Food brands founded</span></div>
+      <div class="stat"><b>1</b><span class="lab">Coffee shop built from scratch</span></div>
+      <div class="stat"><b>L2</b><span class="lab">HACCP Levels 1 &amp; 2 certified</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 skills -->
+<section class="slide" data-sec="Core competencies">
+  <div class="inner">
+    <span class="eyebrow">Core competencies</span><h2>What I bring <em>to your bar</em></h2>
+    <div class="grid4">
+      <article class="skill hot"><svg viewBox="0 0 24 24"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5Z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3c0 1.5 1 1.5 1 3M12 3c0 1.5 1 1.5 1 3"/></svg><h3>Coffee &amp; Beverages</h3><p>Hot and cold drinks to a consistent, high standard.</p></article>
+      <article class="skill"><svg viewBox="0 0 24 24"><path d="M3 10l9-6 9 6"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><h3>Café Management</h3><p>Opened and ran a coffee shop: menu, staff, administration.</p></article>
+      <article class="skill"><svg viewBox="0 0 24 24"><path d="M6 3h12v18H6z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><h3>Menu Development</h3><p>Original recipes and signature sauces; customer-led new items.</p></article>
+      <article class="skill"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.5c3 0 6 1.8 6 5.5"/></svg><h3>Team Leadership</h3><p>Recruiting, training and guiding staff to one service standard.</p></article>
+      <article class="skill"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="18" cy="17" r="2"/></svg><h3>Operations</h3><p>Procurement, mise en place, portion control, quality control.</p></article>
+      <article class="skill"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6Z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><h3>Food Safety</h3><p>HACCP: storage, temperature control, allergen handling.</p></article>
+      <article class="skill"><svg viewBox="0 0 24 24"><path d="M4 14V10l12-5v14L4 14Z"/><path d="M16 9a3 3 0 0 1 0 6"/><path d="M7 15l1.5 5h3L10 15.5"/></svg><h3>Marketing</h3><p>Campaigns that lifted sales and brought in new customers.</p></article>
+      <article class="skill hot"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg><h3>Customer Service</h3><p>Warm, fast service that builds loyal repeat guests.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 4 experience: recent -->
+<section class="slide exp" data-sec="Experience · 1 / 2">
+  <div class="inner">
+    <div class="side"><span class="eyebrow">Experience</span><h2>From waffle iron <em>to owner.</em></h2><p>Eight years across cafés, cloud kitchens and a busy Irish kitchen. Most recent first.</p></div>
+    <div class="tl">
+      <article class="job"><div class="when">Jul 2025 – Jul 2026<small>Ireland</small></div><h3>Line Cook / Kitchen Chef</h3><div class="where">Busy Pub &amp; Fine Dining Kitchen</div>
+        <ul><li>Worked grill, fryer and pasta stations, adapting quickly between sections as service demanded.</li>
+        <li>Cooked fish and chips, burgers and steaks to order and to temperature, managing multiple orders at peak.</li>
+        <li>Ran mise en place each shift with portion control and consistent plating; followed HACCP and allergen protocols.</li></ul></article>
+      <article class="job"><div class="when">2022 – 2025<small>Cloud kitchen</small></div><h3>Founder &amp; Owner</h3><div class="where">Waffle House &amp; SWAT Burgers</div>
+        <ul><li>Founded and managed two brands at once: waffles, crepes, coffee and breakfast; and grilled, smashed and crispy chicken burgers.</li>
+        <li>Developed signature recipes and sauces that set each brand apart.</li>
+        <li>Handled procurement, food preparation and quality control; recruited, trained and guided the team.</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<!-- 5 experience: earlier -->
+<section class="slide exp" data-sec="Experience · 2 / 2">
+  <div class="inner">
+    <div class="side"><span class="eyebrow">Experience</span><h2>Where it <em>started.</em></h2><p>Building the coffee and kitchen craft, then running a café from day one.</p></div>
+    <div class="tl">
+      <article class="job"><div class="when">2020 – 2022<small>Est. 2020</small></div><h3>Coffee Shop Manager</h3><div class="where">Wafflelab</div>
+        <ul><li>Established the coffee shop from scratch: menu design, staff recruitment and training.</li>
+        <li>Oversaw all operational and administrative aspects; introduced marketing that significantly boosted sales.</li>
+        <li>Kept product quality and service standards consistent to maintain customer satisfaction.</li></ul></article>
+      <article class="job"><div class="when">2018 – 2020</div><h3>Barista &amp; Chef</h3><div class="where">Coffee Shop</div>
+        <ul><li>Prepared a wide range of hot and cold beverages with meticulous attention to quality.</li>
+        <li>Built loyal customer relationships and contributed new recipes based on guest feedback.</li></ul></article>
+      <article class="job"><div class="when">2017 – 2018</div><h3>Waffle &amp; Crepe Chef</h3><div class="where">Waffle &amp; Crepe Kitchen</div>
+        <ul><li>Prepared waffles and crepes with innovative methods, holding quality and speed in a fast-paced kitchen.</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<!-- 6 wafflelab -->
+<section class="slide wl" data-sec="Portfolio · Wafflelab">
+  <div class="inner">
+    <div class="side"><span class="eyebrow">Café · Est. 2020</span><h2>Wafflelab, <em>built from scratch.</em></h2>
+      <p>Concept, menu design, hiring, training, daily operations and marketing. A selection of the waffle, crepe and coffee menu.</p>
+      <dl class="facts"><div><dt>Role</dt><dd>Coffee Shop Manager</dd></div><div><dt>Years</dt><dd>2020 – 2022</dd></div><div><dt>Menu</dt><dd>Waffles · Crepes · Coffee</dd></div></dl></div>
+    <div class="bento">
+      <figure class="tile big"><img src="../site/img/wl-smile.jpg" alt="" style="object-position:50% 62%"><span class="cap">A smile in every bite</span></figure>
+      <figure class="tile tall"><img src="../site/img/wl-latte.jpg" alt=""><span class="cap">Spanish latte</span></figure>
+      <figure class="tile"><img src="../site/img/wl-oreo.jpg" alt=""><span class="cap">Oreo waffle</span></figure>
+      <figure class="tile"><img src="../site/img/wl-fruit.jpg" alt=""><span class="cap">Fruit waffle</span></figure>
+      <figure class="tile"><img src="../site/img/wl-crepes.jpg" alt=""><span class="cap">Crepes</span></figure>
+      <figure class="tile"><img src="../site/img/wl-sticks.jpg" alt=""><span class="cap">Waffle sticks</span></figure>
+      <figure class="tile"><img src="../site/img/kitchen-lotus.jpg" alt=""><span class="cap">Lotus waffle</span></figure>
+      <figure class="tile"><img src="../site/img/kitchen-waffle.jpg" alt=""><span class="cap">Classic waffle</span></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 7 swat -->
+<section class="slide swat" data-sec="Portfolio · SWAT Burgers">
+  <div class="inner">
+    <div class="side"><span class="eyebrow">Cloud kitchen · 2022 – 2025</span><h2>SWAT Burgers, <em>founder &amp; owner.</em></h2>
+      <p>Founded and run alongside Waffle House: grilled, smashed and crispy chicken burgers and sandwiches with unique breading and signature sauces.</p>
+      <div class="ticker">Food that moves.<span>SWAT Burgers</span></div></div>
+    <div class="swat-grid">
+      <figure class="card"><img src="../site/img/swat-hummer.jpg" alt=""><span class="cap">Hummer &amp; Big Hummer</span></figure>
+      <figure class="card"><img src="../site/img/swat-general.jpg" alt=""><span class="cap">General</span></figure>
+      <figure class="card"><img src="../site/img/swat-vector.jpg" alt=""><span class="cap">Vector</span></figure>
+      <figure class="card"><img src="../site/img/swat-steak-box.jpg" alt=""><span class="cap">Steak &amp; cheese box</span></figure>
+      <figure class="card"><img src="../site/img/swat-steak-sandwich.jpg" alt=""><span class="cap">Steak sandwich</span></figure>
+      <figure class="card"><img src="../site/img/swat-cordon.jpg" alt=""><span class="cap">Cordon bleu</span></figure>
+      <figure class="card"><img src="../site/img/swat-submarine.jpg" alt=""><span class="cap">Submarine shrimp</span></figure>
+      <figure class="card"><img src="../site/img/swat-friday.jpg" alt=""><span class="cap">SWAT Friday</span></figure>
+      <figure class="card"><img src="../site/img/swat-takeaway.jpg" alt=""><span class="cap">Takeaway shoot</span></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 8 credentials -->
+<section class="slide" data-sec="Credentials">
+  <div class="inner">
+    <span class="eyebrow">Credentials</span><h2>Certified, trained, <em>bilingual.</em></h2>
+    <div class="cred-grid">
+      <div class="panel"><h3>Certifications</h3><ul><li>HACCP Levels 1 &amp; 2</li><li>Advanced Course in Restaurant &amp; Café Management</li><li>Customer Service &amp; Team Leadership Workshop</li></ul></div>
+      <div class="panel"><h3>Education</h3><ul><li>High School Diploma in Restaurant &amp; Hotel Management and Food &amp; Beverage Service<small>Riverchapel, Wexford, Ireland · 2016 – 2017</small></li></ul></div>
+      <div class="panel"><h3>Languages</h3><ul><li>Arabic<small>Native speaker</small><div class="meter"><i></i></div></li><li>English<small>Fluent</small><div class="meter"><i></i></div></li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 contact -->
+<section class="slide contact" data-sec="Contact">
+  <div class="inner">
+    <span class="eyebrow">Contact</span>
+    <p class="big">Let's brew <em>something</em> great.</p>
+    <div class="chips">
+      <div class="chip"><span>Email</span><strong>mazthaher@gmail.com</strong></div>
+      <div class="chip"><span>Phone</span><strong>+962 78 746 6603</strong></div>
+      <div class="chip"><span>Based in</span><strong>Amman, Jordan</strong><small>Ready to relocate to the UAE · References on request</small></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  /* add top bar, drips and footer to every slide */
+  const tpl = document.getElementById('chrome');
+  document.querySelectorAll('.slide').forEach((s, i, all) => {
+    s.appendChild(tpl.content.cloneNode(true));
+    s.querySelector('.sec').textContent = s.dataset.sec;
+    s.querySelector('.foot b').textContent = String(i + 1).padStart(2, '0') + ' / ' + String(all.length).padStart(2, '0');
+  });
+  /* static latte swirl for the cover */
+  const cv = document.getElementById('swirl'), cx = cv.getContext('2d'), W = 1920, H = 1080;
+  cv.width = W; cv.height = H; cx.fillStyle = '#120c09'; cx.fillRect(0, 0, W, H);
+  const cols = ['233,180,124', '199,122,53', '246,236,224'];
+  const field = (x, y) => { const dx = x - W * .72, dy = y - H * .48, d = Math.hypot(dx, dy) + 1; return Math.atan2(dy, dx) + Math.PI / 2 + Math.sin(d / 90) * .6 + Math.sin(x / 210) * .4; };
+  for (let k = 0; k < 900; k++) {
+    let x = Math.random() * W, y = Math.random() * H; const c = cols[k % 3];
+    cx.strokeStyle = `rgba(${c},0.16)`; cx.lineWidth = 1.2; cx.beginPath(); cx.moveTo(x, y);
+    for (let s = 0; s < 140; s++) { const a = field(x, y); x += Math.cos(a) * 2; y += Math.sin(a) * 2; cx.lineTo(x, y); }
+    cx.stroke();
+  }
+</script>
+</body>
+</html>
