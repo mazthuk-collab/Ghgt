@@ -137,6 +137,15 @@ h2 em { font: italic 400 1.04em/1 var(--serif); color: var(--crema); letter-spac
 .chip span { display: block; font: 600 14px/1 var(--sans); letter-spacing: .24em; text-transform: uppercase; color: var(--dust); margin-bottom: 14px; }
 .chip strong { font: 600 34px/1.2 var(--display); font-variation-settings: "wdth" 90; }
 .chip small { display: block; margin-top: 8px; color: var(--crema); font-size: 19px; }
+
+/* barista gallery */
+.barista .inner { display: grid; grid-template-columns: 560px minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); gap: 70px; }
+.barista .side .job { margin-top: 44px; }
+.barista .side .job::before { display: none; }
+.barista .side .job h3 { font-size: 44px; }
+.bar-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 16px; height: 100%; }
+.bar-grid .tile { background: var(--bean); }
+.bar-grid .tall { grid-row: span 2; }
 </style>
 </head>
 <body>
@@ -233,6 +242,22 @@ h2 em { font: italic 400 1.04em/1 var(--serif); color: var(--crema); letter-spac
         <li>Built loyal customer relationships and contributed new recipes based on guest feedback.</li></ul></article>
       <article class="job"><div class="when">2017 – 2018</div><h3>Waffle &amp; Crepe Chef</h3><div class="where">Waffle &amp; Crepe Kitchen</div>
         <ul><li>Prepared waffles and crepes with innovative methods, holding quality and speed in a fast-paced kitchen.</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<!-- 6 barista photos -->
+<section class="slide barista" data-sec="Experience · Barista 2018 – 2020">
+  <div class="inner">
+    <div class="side"><span class="eyebrow">Behind the bar · 2018 – 2020</span><h2>Drinks <em>I made.</em></h2>
+      <article class="job"><div class="when">2018 – 2020</div><h3>Barista &amp; Chef</h3><div class="where">Coffee Shop</div>
+        <ul><li>Prepared a wide range of hot and cold beverages with meticulous attention to quality.</li>
+        <li>Built loyal customer relationships and contributed new recipes based on guest feedback.</li></ul></article></div>
+    <div class="bar-grid">
+      <figure class="tile tall"><img src="../site/img/bar-frappe.jpg" alt="" style="object-position:50% 40%"><span class="cap">Caramel frappuccino</span></figure>
+      <figure class="tile"><img src="../site/img/bar-milkshakes.jpg" alt="" style="object-position:50% 45%"><span class="cap">Milkshakes</span></figure>
+      <figure class="tile tall"><img src="../site/img/bar-iced-tea.jpg" alt="" style="object-position:50% 45%"><span class="cap">Iced teas</span></figure>
+      <figure class="tile"><img src="../site/img/bar-lineup.jpg" alt="" style="object-position:50% 60%"><span class="cap">Cold drinks lineup</span></figure>
     </div>
   </div>
 </section>
