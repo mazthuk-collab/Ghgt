@@ -47,60 +47,109 @@ Principle: **stack value + curiosity, alternating**, same pattern, same discipli
 
 ---
 
-## 3. Master prompt (copy-paste into any AI)
+## 3. Human connection layer
 
-```
-You are an expert short-form video scriptwriter (TikTok, Instagram Reels, YouTube Shorts).
-Write a script using this exact 8-part structure, in this order:
+The structure gets attention. Human connection is what turns a viewer into a follower and a customer. Every script should have these:
 
-1. HOOK – One line whose only job is to make the viewer stop scrolling. Bold, specific,
-   pattern-interrupting. No intro, no "hey guys".
-2. PROMISE – Tell the viewer exactly what they'll get if they keep watching. Its job is to
-   hold them past the first 10 seconds. Can tease that something will be explained later
-   ("and I'll show you why in a second").
-3. VALUE 1 – The first genuinely useful, concrete insight/tip/story beat.
-4. OPEN LOOP 1 – A curiosity line that acts as a second hook and makes them need the next part.
-   Examples: "and that's still not the worst part…", "what happened next is why I almost quit…",
-   "but here's what nobody tells you…".
-5. VALUE 2 – The second useful insight; slightly stronger than Value 1.
-6. OPEN LOOP 2 – A different curiosity line (don't repeat Open Loop 1's wording).
-7. VALUE 3 – The strongest payoff; closes the loops that were opened.
-8. CTA – Not a throwaway. Speak to the warmest viewers who stayed to the end and move them to
-   one clear next step: [CTA TYPE: e.g. "comment the keyword ___", "DM me ___", "follow for part 2",
-   "link in bio"]. Frame it as the viewer → follower → customer step.
+| Element | What it means | Where it goes |
+|---|---|---|
+| **A real face, a real moment** | Start from something that happened to you, a customer, or the team, not from a "tip" | Hook / Value 1 |
+| **"You" language** | Talk to one person, not "everyone" or "guys" | Throughout |
+| **One honest admission** | A mistake, a doubt, a struggle ("I almost closed the shop") | Open loop 1 or Value 2 |
+| **Sensory detail** | What it smelled, sounded, tasted, felt like | Value sections |
+| **A named person** | A customer, a staff member, a family member (with permission) | Value 2 / Value 3 |
+| **Shared feeling** | Say the feeling the viewer already has ("you know that moment when…") | Promise |
+| **Warm CTA** | Invite, don't command: "come say hi", "tell me yours in the comments" | CTA |
 
 Rules:
-- Stack value and curiosity, alternating — never two value sections in a row without a loop.
-- Conversational, spoken-word style; short punchy sentences; written to be said to camera.
-- Target length: [30 / 45 / 60 / 75] seconds (~2.5 words per second).
-- Each section labelled, with an approximate timestamp.
-- Also give: on-screen text overlay for each section, and 3 alternative hooks.
+- At least one line in each script only a real person could say: specific, personal, slightly imperfect.
+- Open loops come from a real story ("what she said next is why we changed the whole menu"), not clickbait.
+- The CTA starts a conversation (asks for their story, opinion or memory), not only a keyword.
+- Never fake a story, a customer, or a number.
 
-Inputs:
-- Topic: [TOPIC]
-- Niche / audience: [WHO IT'S FOR]
-- My offer / what the CTA leads to: [PRODUCT, FREEBIE, MASTERCLASS, etc.]
-- CTA keyword (if comment-based): [KEYWORD]
-- Tone: [e.g. confident, friendly, authoritative, storytelling]
-```
+---
 
-### Output format to request
+## 4. Dafsheh brand block (fill in once, reuse in every prompt)
 
 ```
+BRAND: Dafsheh
+WHAT WE ARE: [e.g. coffee shop / café / food brand / product]
+LOCATION: [city, country]
+WHO WE SERVE: [ideal customer: age, lifestyle, why they come]
+WHAT MAKES US DIFFERENT: [1–3 things only Dafsheh does]
+THE STORY BEHIND THE NAME: [what "Dafsheh" means and why you chose it]
+FOUNDER / FACES ON CAMERA: [who speaks in the videos]
+BRAND VOICE: [e.g. warm, playful, proud, local, family-like]
+LANGUAGE: [Arabic / English / mix; dialect, e.g. Jordanian/Gulf]
+SIGNATURE PRODUCTS: [3–5 hero items]
+WORDS WE USE: [phrases, slang, greetings]
+WORDS WE NEVER USE: [anything off-brand]
+MAIN OFFER / NEXT STEP: [visit, order, DM, delivery app, link]
+CTA KEYWORD: [e.g. DAFSHEH]
+```
+
+---
+
+## 5. Master prompt (copy-paste into any AI)
+
+```
+You are a short-form video scriptwriter for the brand Dafsheh (TikTok, Instagram Reels,
+YouTube Shorts). Your scripts must feel human, warm and real, as if spoken by someone
+from Dafsheh to one person they care about, never like an ad.
+
+BRAND CONTEXT:
+[PASTE THE DAFSHEH BRAND BLOCK HERE]
+
+Write a script using this exact 8-part structure, in order:
+
+1. HOOK (0–3s): One line to stop the scroll. Start from a real moment, person, feeling or
+   surprising truth from Dafsheh's world. No "hey guys", no logo intro.
+2. PROMISE (3–10s): Tell the viewer what they'll get by staying. Name a feeling they already
+   have ("you know that moment when…"). Can tease something for later.
+3. VALUE 1: The first genuinely useful or delightful thing (a tip, a behind-the-scenes detail,
+   a story beat). Include one sensory detail (smell, sound, taste, texture).
+4. OPEN LOOP 1: A curiosity line that comes from a real story, e.g. "and that's still not the
+   worst part…", "what she said next is why we changed everything…".
+5. VALUE 2: Stronger than Value 1. Include one honest admission (a mistake, a doubt, a
+   struggle) or a named person (customer, staff, family).
+6. OPEN LOOP 2: A different curiosity line (don't reuse Loop 1's wording).
+7. VALUE 3: The strongest payoff. Close the loops and land the emotional point: why Dafsheh
+   exists and why it matters to the viewer.
+8. CTA: Warm invitation, not a command. Speak to the viewers who stayed to the end and give
+   one clear next step: [comment "KEYWORD" / visit us / order / DM]. Also ask them a question
+   that starts a conversation (their memory, opinion or story).
+
+Rules:
+- Alternate value and curiosity. Never two value sections in a row without a loop.
+- Use "you", not "everyone". Short, spoken sentences written to be said to camera.
+- Keep the Dafsheh voice, language and dialect from the brand block.
+- Include at least one line only a real person could say: specific, personal, imperfect.
+- Never invent fake customers, reviews, numbers or events. Use [placeholders] where real
+  details are needed.
+- Target length: [30 / 45 / 60] seconds (~2.5 words per second).
+
+Output:
 HOOK (0–3s): ...
 PROMISE (3–10s): ...
-VALUE 1 (10–20s): ...
+VALUE 1: ...
 OPEN LOOP 1: ...
 VALUE 2: ...
 OPEN LOOP 2: ...
 VALUE 3: ...
 CTA: ...
-On-screen text: ...
+On-screen text for each section: ...
+B-roll / shot ideas (hands, pouring, faces, customers, the space): ...
+Human-connection check: list the sensory detail, the honest admission, the named person and
+the conversation question you used.
 Alt hooks: 1) ... 2) ... 3) ...
+
+Topic for this video: [TOPIC]
 ```
 
 ### Quick variants
 
-- **Story version:** "Use the same 8-part structure, but make Values 1–3 three beats of a personal story, with the lesson revealed in Value 3."
-- **Batch:** "Generate 10 hook + promise pairs for [TOPIC] using this framework, then fully script the best 3."
-- **Rewrite:** "Here is my existing script: [PASTE]. Restructure it into Hook → Promise → Value 1 → Open Loop → Value 2 → Open Loop → Value 3 → CTA, and point out which part was missing."
+- **Customer story:** "Use the same structure, but tell the story of one real Dafsheh customer: [DETAILS]. Values 1–3 are three beats of their story."
+- **Founder story:** "Make Values 1–3 three beats of how Dafsheh started: [DETAILS]. Open loops tease the hardest moment."
+- **Behind the scenes:** "Show a day or a process at Dafsheh: [PROCESS]. Every value section has a sensory detail and a shot idea."
+- **Batch:** "Generate 10 hook + promise pairs for Dafsheh on [TOPIC], each starting from a human moment, then fully script the best 3."
+- **Rewrite:** "Here is my script: [PASTE]. Restructure it into the 8-part structure, add the human-connection elements, and make it sound like Dafsheh."
